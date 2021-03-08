@@ -1,19 +1,17 @@
-import DataFeed from '../src/DataFeed.js';
+import DataFeed from '../lib/BinanceDataFeed.js';
 
 // create a data feed using the default endpoint
 const feed = new DataFeed();
-/*
 // REST
 // get a snapshot of the current state of the orderbook for a selected symbol
 feed.getOrderBookSnapshot('ADXBTC', (data) => {
   console.log(data)
 });
-*/
 // get a json descriptor of tick sizes, symbols & rate limits
 feed.getExchangeInfo((data) => {
   console.log(data.symbols[0]);
 });
-/*
+
 // WebSockets
 // get live updates for every trade for a specific symbol
 const sub1 = feed.subscribe('BNBBTC', {
@@ -60,4 +58,3 @@ setTimeout(() => {
 // even if you don't explicitly unsubscribe, all interval handlers
 // will be destroyed once the subscription objects go out of scope
 // sub2 and sub1's periodic PINGs to binance will automatically stop
-*/

@@ -1,5 +1,5 @@
-import DataFeed from '../src/DataFeed.js';
-import OrderBook from '../src/OrderBook.js';
+import DataFeed from '../lib/BinanceDataFeed.js';
+import OrderBook from '../lib/BinanceOrderBook.js';
 
 // check out datafeed-examples.js for more info
 const feed = new DataFeed();
@@ -25,7 +25,7 @@ setInterval(() => {
   // the OrderBook class reconstructs the tape from live updates
   // the parameters below will return 33 levels of bids & asks
   const orderBookLevels = 3, aggregationPerLevel = 5;
-  const data = book.getUpdate(orderBookLevels, aggregationPerLevel);
+  const data = book.getSnapshot(orderBookLevels, aggregationPerLevel);
 
   // snapshot not parsed yet or WS not ready
   if (!data)
