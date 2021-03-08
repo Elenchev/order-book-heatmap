@@ -1,0 +1,45 @@
+{
+  "name": "order-book-heatmap",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "This was an exploratory project, that I put together in a couple days in order familiarize myself with the Binance API and the limitations around the live market data streams provided by them. The end-result of this repo is a live order book visualization, although this wasn't the main goal. Keep in mind that if all you need is an order book display most of the code in this repo will be of no use to you.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: only unlucky people need tests\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [
+    "order book",
+    "limit order book",
+    "limit order",
+    "market order",
+    "heatmap",
+    "market heatmap",
+    "finance heatmap",
+    "order depth",
+    "market",
+    "market chart",
+    "binance",
+    "crypto",
+    "crypto heatmap",
+    "time and sales",
+    "trade",
+    "trader",
+    "futures",
+    "bitcoin",
+    "heatmap",
+    "d3"
+  ],
+  "author": "Ivo Elenchev",
+  "license": "BSD",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "d3": "^4.13.0",
+    "isomorphic-ws": "^4.0.0",
+    "ws": "^4.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
