@@ -1,0 +1,140 @@
+body {
+  background-color: black;
+}
+
+.heatmap-wrapper {
+  height: 100%;
+}
+
+.ui {
+  background-color: #202020;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #373737;
+  color: #909090;
+}
+
+.ui > .input-wrapper {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.ui > .github-star {
+  display: inline-block;
+  margin-top: 14px;
+  float: right;
+}
+
+.ui > .labels {
+  padding-bottom: 5px;
+}
+
+.ui select {
+  background: black;
+  border: none;
+  height: 30px;
+  font-size: 14px;
+  padding: 0px 10px 0px 5px;
+}
+
+.ui select:focus{
+  border-color: none;
+  outline:none;
+}
+
+.trades {
+  padding-top: 20px;
+  max-height: calc(50vh - 30px);
+  height: calc(50vh - 30px);
+  overflow-y: scroll;
+}
+
+.bar-chart-wrapper {
+  max-height: calc(50vh - 30px);
+  height: calc(50vh - 30px);
+}
+
+.limit-orders-bar-chart {
+  height: 100%;
+  width: 100%;
+}
+
+table {
+  text-align: left;
+  width: 100%;
+  color: white;
+}
+
+tr {
+  padding: 5px;
+}
+
+td {
+  color: #aeaeae;
+  padding-right: 10px;
+}
+
+tr.buy {
+  background-color: #073247;
+}
+tr.top-trade.buy {
+  background-color: #0793df;
+}
+
+tr.sell {
+  background-color: #250604;
+}
+tr.top-trade.sell {
+  background-color: #c02e21;
+}
+
+th {
+  color: #707070;
+}
+
+.level2-barchart {
+  height: 30vh;
+  max-height: 30vh;
+}
+
+.axis-x path {
+  stroke: white
+}
+.axis-x line {
+  stroke: white
+}
+.axis-x text {
+  fill: white
+}
+
+.axis-y path {
+  stroke: white
+}
+.axis-y line {
+  stroke: white
+}
+.axis-y text {
+  fill: white
+}
+
+/*
+ * dark scrollbar
+ */
+html {
+  scrollbar-face-color: #646464;
+  scrollbar-base-color: #646464;
+  scrollbar-3dlight-color: #646464;
+  scrollbar-highlight-color: #646464;
+  scrollbar-track-color: #000;
+  scrollbar-arrow-color: #000;
+  scrollbar-shadow-color: #646464;
+  scrollbar-dark-shadow-color: #646464;
+}
+
+::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: #000; }
+::-webkit-scrollbar-track {  background-color: #000;}
+::-webkit-scrollbar-track-piece { background-color: #000;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666;}
+::-webkit-scrollbar-corner { background-color: #000;}
+::-webkit-resizer { background-color: #000;}
