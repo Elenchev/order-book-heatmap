@@ -1,9 +1,11 @@
 Try it with live data: [https://elenchev.github.io/order-book-heatmap/](https://elenchev.github.io/order-book-heatmap/)
+* It's better at visualizing less volatile markets.
+* Lower the update interval / max heatmap size if performance is an issue.
 
-# Order Book Heatmap
+# OrderBook Heatmap
 This repo implements a live limit order book heatmap, resting limit orders graph and a buffered time &amp; sales log. Market data is received through a custom Binance WS client, which feeds data into a simple orderbook structure, responsible for keeping track of all market deltas and returning snapshots to the D3 visualizations.
 
-The main goal of this project was to familiarize myself with the Binance WS APIs and the data streams that they provide. Keep in mind that this was writtin in a couple of days, it's nowhere near close to handling all possible market states.
+The main goal of this project was to familiarize myself with the Binance WS APIs and the data streams that they provide. Keep in mind that this was written in a couple of days, it's nowhere near close to handling all possible market states.
 
 ![example gif](./assets/images/ltc-example.gif)
 
@@ -20,10 +22,10 @@ feed.subscribe('BTCUSDT', {
 ## lib/BinanceOrderBook.js
 Limit order book implementation, which depends on `BinanceDataFeed.js`. Internal structures keep a live representation of the limit order book. The class also keeps track of all trades and calculates some simple statistics. Check out `examples/orderbook-example.js` to see how to use it.
 
-BinanceOrderBook.js provides a `getSnapshot` method, which is what the vosialization modules use in order to display all heatmaps & charts.
+BinanceOrderBook.js provides a `getSnapshot` method, which is what the visualization modules use in order to display all heatmaps & charts.
 
 ## lib/Tick.js
-Unfortunately Binance uses strings for all prices, volumes & quanitites, instead of just returning the number of ticks (int) representing the price. Simply using parseFloat introduces a lot of inaccuracies. `Tick.js` handles all this by allowing you to work with ticks instead of strings. It lets you parse, round, add, substract, increment, decrement, multiply and divide. It also handles aggregation, if you want to use the same instance to work with ticks as well as steps (multiples of N ticks).
+Unfortunately Binance uses strings for all prices, volumes & quantities, instead of just returning the number of ticks (int) representing the price. Simply using parseFloat introduces a lot of inaccuracies. `Tick.js` handles all this by allowing you to work with ticks instead of strings. It lets you parse, round, add, subtract, increment, decrement, multiply and divide. It also handles aggregation, if you want to use the same instance to work with ticks as well as steps (multiples of N ticks).
 
 ## src/Dashboard.js
 This class makes calls `lib/BinanceOrderBook.js` on regular intervals specified by the user, and uses the snapshot provided by it to render different visualizations. Some notable features:
