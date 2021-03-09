@@ -33,6 +33,10 @@ This class makes calls `lib/BinanceOrderBook.js` on regular intervals specified 
 * Bar chart visualization of resting orders at all prices close to the bid/ask
 * Time & Sales log, with top 10% of orders (by size) highlighter
 
+# Notes & TODOs
+* The project supports all Binance instruments, but highly volatile instruments don't work well with the heatmap. The solution would be to use aggregated prices, which is something that the OrderBook class already supports. I wasn't very interested in this use case, but implementing it would be pretty easy.
+* All visualizations use SVG. Replacing all SVGs with canvas elements will improve performance significantly.
+* The datafeed module does not make requests to the long connection Binance URL, so connections will time out after 1 hour. This was done partially because I didn't need it, and partially so that I didn't have to worry about handling credentials in a public repo.
 
 # Screenshots
 ![](./assets/images/1.png)
