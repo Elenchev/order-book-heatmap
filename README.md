@@ -1,4 +1,4 @@
-Try it now: <TODO>
+Try it with live data: [https://elenchev.github.io/order-book-heatmap/](https://elenchev.github.io/order-book-heatmap/)
 
 # Order Book Heatmap
 This repo implements a live limit order book heatmap, resting limit orders graph and a buffered time &amp; sales log. Market data is received through a custom Binance WS client, which feeds data into a simple orderbook structure, responsible for keeping track of all market deltas and returning snapshots to the D3 visualizations.
