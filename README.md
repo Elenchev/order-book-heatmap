@@ -40,7 +40,12 @@ This class makes calls `lib/BinanceOrderBook.js` on regular intervals specified 
 * All visualizations use SVG. Replacing all SVGs with canvas elements will improve performance significantly.
 * The datafeed module does not make requests to the long connection Binance URL, so connections will time out after 1 hour. This was done partially because I didn't need it, and partially so that I didn't have to worry about handling credentials in a public repo.
 
-# Screenshots
+# Screenshots & Examples
+## Calm market
 ![](./assets/images/1.png)
+
+## Breakout from 188
 ![](./assets/images/2.png)
+
+## Resistance at 187
 ![](./assets/images/3.png)
